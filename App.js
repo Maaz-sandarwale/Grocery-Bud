@@ -4,7 +4,7 @@ import List from './List'
 const getLocal = () => {
   let list = localStorage.getItem('Item')
   if (list) {
-    return list = JSON.parse(localStorage.getItem('Item'))
+    return list = JSON.parse(list)
   } else {
     return []
   }
@@ -63,6 +63,12 @@ function App() {
     setItems(ele)
     setAlert({ set: true, msg: 'Item Deleted', type: 'danger' })
   }
+
+  const clearAll = () => {
+    setItems([])
+    setAlert({ set: true, msg: 'Empty list', type: 'danger' })
+  }
+
   useEffect(() => {
     if (alert.set) {
       const ctn = setTimeout(() => {
@@ -77,9 +83,7 @@ function App() {
     localStorage.setItem("Item", JSON.stringify(Items))
   }, [Items])
 
-  const clearAll = () => {
-    setItems([])
-  }
+
   return (
     <>
 
