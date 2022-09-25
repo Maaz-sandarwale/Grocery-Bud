@@ -349,7 +349,7 @@ Grocery List
 
 .content {
   background-color: white;
-  width: 500px;
+  max-width: 500px;
   min-height: 200px;
   margin: 0 auto;
   margin-top: 10%;
